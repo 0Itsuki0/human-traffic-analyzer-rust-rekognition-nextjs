@@ -1,0 +1,33 @@
+[package]
+name = "api-gateway-lambda"
+version = "0.1.0"
+edition = "2021"
+
+[package.metadata.lambda.env]
+"BUCKET_NAME"="rekognitiondatabasestack-rekognitionbucketb1399c89-mkqd5trvy1is"
+"TOPIC_ARN"="arn:aws:sns:ap-northeast-1:075198889659:AmazonRekognitionTopic"
+"ROLE_ARN"="arn:aws:iam::075198889659:role/RekognitionHandlerStack-RekognitionServiceRole12071-yn0BX4UmggqJ"
+"TABLE_NAME"="RekognitionDatabaseStack-RekognitionJobTable2C6760A8-OAMKR7X0PSN4"
+
+[dependencies]
+anyhow = { workspace = true }
+aws-config = { workspace = true }
+aws-smithy-types = { workspace = true }
+tokio = { workspace = true }
+aws-sdk-rekognition = { workspace = true }
+aws-sdk-s3 = { workspace = true }
+aws_lambda_events = { workspace = true }
+serde_json = { workspace = true }
+serde = { workspace = true }
+uuid =  { workspace = true }
+axum = { workspace = true }
+
+
+# package only
+lambda_http = "0.13.0"
+tower-http = { version = "0.5.2", features = ["limit"] }
+regex = "1.10.6"
+urlencoding = "2.1.3"
+
+# shared library
+lib = { path = "../lib" }

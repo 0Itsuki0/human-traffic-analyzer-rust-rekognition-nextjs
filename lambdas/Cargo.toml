@@ -1,0 +1,22 @@
+
+[workspace]
+resolver = "2"
+members = [
+    "process-results-lambda",
+    "lib",
+    "api-gateway-lambda",
+]
+
+
+[workspace.dependencies]
+anyhow = "1.0.82"
+aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
+aws-smithy-types = "1.2.2"
+tokio = { version = "1", features = ["macros"] }
+aws-sdk-rekognition = "1.42.0"
+aws-sdk-s3 = "1.46.0"
+aws_lambda_events = "0.15.1"
+serde_json = "1.0.127"
+serde = { version = "1.0.209", features = ["derive"] }
+uuid = { version = "1.10.0", features = ["v4"] }
+axum = "0.7.5"
