@@ -55,7 +55,6 @@ export class RekognitionHandlerStack extends Stack {
             endpointTypes: [EndpointType.REGIONAL],
         });
         this.restApi = restApi
-        console.log("restApi.url", restApi.url)
 
         s3Bucket.grantReadWrite(apigatewayLambda);
         jobTable.grantFullAccess(apigatewayLambda);
